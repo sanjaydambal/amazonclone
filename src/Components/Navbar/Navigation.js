@@ -1,15 +1,19 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../CartContext';
 import "./Navigation.css"
 
 
 
 class NavBar extends Component {
+    static contextType = CartContext;
     constructor(props) {
         super(props);
         this.state = {}
     }
 
     render() {
+        let {item,size,increment} = this.context;
         return (
           <div>
             <div className='navbar__component'>
@@ -48,7 +52,7 @@ class NavBar extends Component {
                     </div>
                     <div className=' navbar_text cart'>
                         <div src='' className='cart_img'></div>
-                        <div className='cart_item'>0</div>
+                        <div className='cart_item'>{size}</div>
                         <div className="navbar_cart_text">Cart</div>
                     </div>
                       </div>

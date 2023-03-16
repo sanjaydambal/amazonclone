@@ -5,6 +5,7 @@ import Checkout from './Components/Checkout/Checkout';
 import DisplayPage from './Components/DisplayPage/DisplayPage';
 import PlaceOrder from './Components/PlaceOrder/Placeorder';
 import { BrowserRouter as Router, Route,Routes,Link} from "react-router-dom";
+import CartContextProvider from './Components/CartContext';
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
     <Router>
       <div className="App">
           
+             
+             <CartContextProvider>
              <NavBar />
               <Routes>  
               <Route path="" element= {<MainPage />}>
@@ -28,7 +31,7 @@ function App() {
                 </Route>
                
               </Routes>
-           
+              </CartContextProvider>
       </div>
     </Router>
   );
